@@ -2,6 +2,13 @@
 
 > Returns an object containing the path and flags parsed from process.argv
 
+[![Build Status](https://travis-ci.org/neogeek/parse-cmd-args.svg?branch=master)](https://travis-ci.org/neogeek/parse-cmd-args)
+[![codecov](https://img.shields.io/codecov/c/github/neogeek/parse-cmd-args/master.svg)](https://codecov.io/gh/neogeek/parse-cmd-args)
+[![Dependency Status](https://david-dm.org/neogeek/parse-cmd-args.svg)](https://david-dm.org/neogeek/parse-cmd-args)
+[![Known Vulnerabilities](https://snyk.io/test/npm/parse-cmd-args/badge.svg)](https://snyk.io/test/npm/parse-cmd-args)
+[![bitHound Overall Score](https://www.bithound.io/github/neogeek/parse-cmd-args/badges/score.svg)](https://www.bithound.io/github/neogeek/parse-cmd-args)
+[![NPM Version](http://img.shields.io/npm/v/parse-cmd-args.svg?style=flat)](https://www.npmjs.org/package/parse-cmd-args)
+
 ## Install
 
 ```bash
