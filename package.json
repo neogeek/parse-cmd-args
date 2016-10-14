@@ -1,0 +1,35 @@
+{
+  "name": "parse-cmd-args",
+  "description": "Returns an object containing the path and flags parsed from process.argv",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@neogeek/eslint-config-standards": "1.6.3",
+    "codecov": "1.0.1",
+    "doxdox": "0.1.15",
+    "eslint": "3.8.0",
+    "istanbul": "0.4.5",
+    "mocha": "3.1.2"
+  },
+  "scripts": {
+    "test": "make lint && make coverage"
+  },
+  "keywords": [
+    "parse",
+    "cmd",
+    "args"
+  ],
+  "authors": [
+    {
+      "name": "Scott Doxey",
+      "email": "hello@scottdoxey.com",
+      "homepage": "http://scottdoxey.com/"
+    }
+  ],
+  "homepage": "https://github.com/neogeek/parse-cmd-args",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/neogeek/parse-cmd-args.git"
+  }
+}

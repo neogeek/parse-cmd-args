@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "@neogeek/eslint-config-standards"
+  ],
+  "rules": {
+    "max-statements": 0,
+    "no-param-reassign": 0
+  }
+}
