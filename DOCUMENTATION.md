@@ -6,7 +6,7 @@
 ### lib/cmd.js
 
 
-#### parseCmdArgs([args]) 
+#### parseCmdArgs([args, options]) 
 
 Returns an object containing the path and flags parsed from process.argv
 
@@ -19,6 +19,8 @@ Returns an object containing the path and flags parsed from process.argv
 ##### Parameters
 
 - **args** `Array`  *Optional* Arguments to parse through.
+- **options** `Object`  *Optional* Options object.
+- **options.requireUserInput** `Object`  *Optional* Require user defined input through process.argv removing default of current directory.
 
 
 

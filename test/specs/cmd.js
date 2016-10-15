@@ -26,7 +26,7 @@ describe('parseCmdArgs', () => {
 
     });
 
-    it('parseCmdArgs with all valid arguments and directory', () => {
+    it('parseCmdArgs with all valid arguments and user input', () => {
 
         const args = parseCmdArgs([
             './src',
@@ -112,6 +112,47 @@ describe('parseCmdArgs', () => {
         assert.deepEqual(args, {
             'flags': {},
             'input': `${process.cwd()}/test/specs`
+        });
+
+    });
+
+    it('parseCmdArgs with requireUserInput option enabled and no user input', () => {
+
+        const args = parseCmdArgs([], {
+            'requireUserInput': true
+        });
+
+        assert.deepEqual(args, {
+            'flags': {},
+            'input': null
+        });
+
+    });
+
+    it('parseCmdArgs with requireUserInput option enabled and no user input defined with flags', () => {
+
+        const args = parseCmdArgs(['--version'], {
+            'requireUserInput': true
+        });
+
+        assert.deepEqual(args, {
+            'flags': {
+                '--version': true
+            },
+            'input': null
+        });
+
+    });
+
+    it('parseCmdArgs with requireUserInput option enabled and user input defined', () => {
+
+        const args = parseCmdArgs(['test.js'], {
+            'requireUserInput': true
+        });
+
+        assert.deepEqual(args, {
+            'flags': {},
+            'input': `${process.cwd()}/test.js`
         });
 
     });
