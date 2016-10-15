@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1 (October 15, 2016)
+
+- Added requireUserInput option.
+
 ## 1.0.0 (October 14, 2016)
 
 - Initial release.
