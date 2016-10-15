@@ -20,15 +20,15 @@ $ npm install parse-cmd-args --save
 ```javascript
 const args = require('parse-cmd-args')();
 
-if (args.flags['--help']) {
+if (args.flags['--version'] || args.flags['-v']) {
+
+    process.stdout.write(`${require('../package').version}\n`);
+    process.exit();
+
+} else if (args.flags['--help'] || args.flags['-h']) {
 
     process.stdout.write('Usage: ');
     process.stdout.write('\n');
-    process.exit();
-
-} else if (args.flags['--version'] || args.flags['-v']) {
-
-    process.stdout.write(`${require('../package').version}\n`);
     process.exit();
 
 }
