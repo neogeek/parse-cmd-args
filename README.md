@@ -27,8 +27,7 @@ if (args.flags['--version'] || args.flags['-v']) {
 
 } else if (args.flags['--help'] || args.flags['-h']) {
 
-    process.stdout.write('Usage: ');
-    process.stdout.write('\n');
+    process.stdout.write('Usage: \n');
     process.exit();
 
 }
