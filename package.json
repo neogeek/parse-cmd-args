@@ -3,6 +3,9 @@
   "description": "Returns an object containing the path and flags parsed from process.argv",
   "version": "1.0.1",
   "main": "index.js",
+  "engines": {
+    "node": ">=4.0"
+  },
   "license": "MIT",
   "devDependencies": {
     "@neogeek/eslint-config-standards": "1.6.3",
