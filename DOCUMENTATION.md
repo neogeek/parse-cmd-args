@@ -1,4 +1,4 @@
-# [parse-cmd-args](https://github.com/neogeek/parse-cmd-args) *1.0.1*
+# [parse-cmd-args](https://github.com/neogeek/parse-cmd-args) *1.0.2*
 
 > Returns an object containing the path and flags parsed from process.argv
 
