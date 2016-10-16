@@ -4,7 +4,7 @@ const parseCmdArgs = require('../../lib/cmd');
 
 describe('parseCmdArgs', () => {
 
-    it('parseCmdArgs with all valid arguments', () => {
+    it('parseCmdArgs with flags', () => {
 
         const args = parseCmdArgs([
             '-f',
@@ -26,7 +26,7 @@ describe('parseCmdArgs', () => {
 
     });
 
-    it('parseCmdArgs with all valid arguments and user input', () => {
+    it('parseCmdArgs with flags and user input', () => {
 
         const args = parseCmdArgs([
             './src',
@@ -49,7 +49,7 @@ describe('parseCmdArgs', () => {
 
     });
 
-    it('parseCmdArgs with both valid and invalid arguments', () => {
+    it('parseCmdArgs with flags and non-value flags', () => {
 
         const args = parseCmdArgs([
             '--flag',
@@ -105,7 +105,7 @@ describe('parseCmdArgs', () => {
 
     });
 
-    it('parseCmdArgs with no arguments', () => {
+    it('parseCmdArgs with no flags or user input', () => {
 
         const args = parseCmdArgs();
 
@@ -116,7 +116,7 @@ describe('parseCmdArgs', () => {
 
     });
 
-    it('parseCmdArgs with requireUserInput option enabled and no user input', () => {
+    it('parseCmdArgs with no flags or user input (requireUserInput option enabled)', () => {
 
         const args = parseCmdArgs([], {
             'requireUserInput': true
@@ -129,7 +129,7 @@ describe('parseCmdArgs', () => {
 
     });
 
-    it('parseCmdArgs with requireUserInput option enabled and no user input defined with flags', () => {
+    it('parseCmdArgs with a flag and no user input (requireUserInput option enabled)', () => {
 
         const args = parseCmdArgs(['--version'], {
             'requireUserInput': true
@@ -144,7 +144,7 @@ describe('parseCmdArgs', () => {
 
     });
 
-    it('parseCmdArgs with requireUserInput option enabled and user input defined', () => {
+    it('parseCmdArgs with no flags and user input (requireUserInput option enabled)', () => {
 
         const args = parseCmdArgs(['test.js'], {
             'requireUserInput': true
