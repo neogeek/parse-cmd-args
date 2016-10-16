@@ -49,6 +49,59 @@ describe('parseCmdArgs', () => {
 
     });
 
+    it('parseCmdArgs with flags and multiple user input', () => {
+
+        const args = parseCmdArgs([
+            './src',
+            './lib',
+            '-f',
+            'no-reply@test.com',
+            '-t',
+            'no-reply@test.com',
+            '-s',
+            'Test email'
+        ]);
+
+        assert.deepEqual(args, {
+            'flags': {
+                '-f': 'no-reply@test.com',
+                '-s': 'Test email',
+                '-t': 'no-reply@test.com'
+            },
+            'input': `${process.cwd()}/src`
+        });
+
+    });
+
+    it('parseCmdArgs with flags and multiple user input (allowMultipleInputs option enabled)', () => {
+
+        const args = parseCmdArgs([
+            './src',
+            './lib',
+            '-f',
+            'no-reply@test.com',
+            '-t',
+            'no-reply@test.com',
+            '-s',
+            'Test email'
+        ], {
+            'allowMultipleInputs': true
+        });
+
+        assert.deepEqual(args, {
+            'flags': {
+                '-f': 'no-reply@test.com',
+                '-s': 'Test email',
+                '-t': 'no-reply@test.com'
+            },
+            'inputs': [
+                `${process.cwd()}/src`,
+                `${process.cwd()}/lib`
+            ]
+        });
+
+    });
+
     it('parseCmdArgs with flags and non-value flags', () => {
 
         const args = parseCmdArgs([
