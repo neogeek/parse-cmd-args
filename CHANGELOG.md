@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2 (October 16, 2016)
+
+- Added allowMultipleInputs option.
+
 ## 1.0.1 (October 15, 2016)
 
 - Added requireUserInput option.
