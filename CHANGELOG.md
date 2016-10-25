@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.0 (October 25, 2016)
+
+- Removed path resolution of inputs.
+
 ## 1.0.2 (October 16, 2016)
 
 - Added allowMultipleInputs option.
