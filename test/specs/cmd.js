@@ -44,7 +44,7 @@ describe('parseCmdArgs', () => {
                 '-s': 'Test email',
                 '-t': 'no-reply@test.com'
             },
-            'input': `${process.cwd()}/src`
+            'input': './src'
         });
 
     });
@@ -68,7 +68,7 @@ describe('parseCmdArgs', () => {
                 '-s': 'Test email',
                 '-t': 'no-reply@test.com'
             },
-            'input': `${process.cwd()}/src`
+            'input': './src'
         });
 
     });
@@ -95,8 +95,8 @@ describe('parseCmdArgs', () => {
                 '-t': 'no-reply@test.com'
             },
             'inputs': [
-                `${process.cwd()}/src`,
-                `${process.cwd()}/lib`
+                './src',
+                './lib'
             ]
         });
 
@@ -164,7 +164,7 @@ describe('parseCmdArgs', () => {
 
         assert.deepEqual(args, {
             'flags': {},
-            'input': `${process.cwd()}/test/specs`
+            'input': 'test/specs'
         });
 
     });
@@ -205,7 +205,7 @@ describe('parseCmdArgs', () => {
 
         assert.deepEqual(args, {
             'flags': {},
-            'input': `${process.cwd()}/test.js`
+            'input': 'test.js'
         });
 
     });
