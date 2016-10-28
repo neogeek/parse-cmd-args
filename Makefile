@@ -2,11 +2,12 @@ BIN=node_modules/.bin
 
 test:
 	make lint
-	$(BIN)/mocha test/specs/
+	$(BIN)/mocha test/specs
+	make docs && git diff master:DOCUMENTATION.md DOCUMENTATION.md
 
 lint:
 	$(BIN)/eslint cmd.js
-	$(BIN)/eslint test/specs/
+	$(BIN)/eslint test/specs
 
 coverage:
 	$(BIN)/istanbul cover $(BIN)/_mocha test/specs && $(BIN)/codecov
