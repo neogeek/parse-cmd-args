@@ -3,7 +3,7 @@ BIN=node_modules/.bin
 test:
 	make lint
 	$(BIN)/mocha test/specs
-	make docs && git diff master:DOCUMENTATION.md DOCUMENTATION.md
+	$(BIN)/doxdox lib/cmd.js -p package.json -l markdown | diff DOCUMENTATION.md -
 
 lint:
 	$(BIN)/eslint cmd.js
@@ -13,6 +13,6 @@ coverage:
 	$(BIN)/istanbul cover $(BIN)/_mocha test/specs && $(BIN)/codecov
 
 docs:
-	$(BIN)/doxdox lib/cmd.js -p package.json -l Markdown -o DOCUMENTATION.md
+	$(BIN)/doxdox lib/cmd.js -p package.json -l markdown -o DOCUMENTATION.md
 
 .PHONY: test coverage

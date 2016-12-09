@@ -25,10 +25,12 @@ Returns an object containing the path and flags parsed from process.argv
 
 ##### Parameters
 
-- **args** `Array`  *Optional* Arguments to parse through.
-- **options** `Object`  *Optional* Options object.
-- **options.requireUserInput** `Object`  *Optional* Require user defined input through process.argv removing default of current directory.
-- **options.allowMultipleInputs** `Object`  *Optional* Allow for multiple user defined inputs. Causes parseCmdArgs to return an array of inputs.
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| args | `Array`  | Arguments to parse through. | *Optional* |
+| options | `Object`  | Options object. | *Optional* |
+| options.requireUserInput | `Object`  | Require user defined input through process.argv removing default of current directory. | *Optional* |
+| options.allowMultipleInputs | `Object`  | Allow for multiple user defined inputs. Causes parseCmdArgs to return an array of inputs. | *Optional* |
 
 
 
@@ -36,7 +38,7 @@ Returns an object containing the path and flags parsed from process.argv
 ##### Returns
 
 
-- `Object`   Object with keys for both the input and flags parsed out of arguments array.
+- `Object`  Object with keys for both the input and flags parsed out of arguments array.
 
 
 
