@@ -8,6 +8,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/npm/parse-cmd-args/badge.svg)](https://snyk.io/test/npm/parse-cmd-args)
 [![bitHound Overall Score](https://www.bithound.io/github/neogeek/parse-cmd-args/badges/score.svg)](https://www.bithound.io/github/neogeek/parse-cmd-args)
 [![NPM Version](http://img.shields.io/npm/v/parse-cmd-args.svg?style=flat)](https://www.npmjs.org/package/parse-cmd-args)
+[![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/parse-cmd-args)
 
 ## Install
 
@@ -39,4 +40,4 @@ console.log(output);
 
 ## Documentation
 
-View full documentation [here](DOCUMENTATION.md).
+View full documentation [here](https://doxdox.org/neogeek/parse-cmd-args).
