@@ -164,7 +164,7 @@ describe('parseCmdArgs', () => {
 
         assert.deepEqual(args, {
             'flags': {},
-            'input': 'test/specs'
+            'input': 'test/specs/'
         });
 
     });
