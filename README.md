@@ -1,5 +1,7 @@
 # parse-cmd-args
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/neogeek/parse-cmd-args.svg)](https://greenkeeper.io/)
+
 > Returns an object containing the path and flags parsed from process.argv
 
 [![Build Status](https://travis-ci.org/neogeek/parse-cmd-args.svg?branch=master)](https://travis-ci.org/neogeek/parse-cmd-args)
