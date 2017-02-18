@@ -1,7 +1,5 @@
 # parse-cmd-args
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/neogeek/parse-cmd-args.svg)](https://greenkeeper.io/)
-
 > Returns an object containing the path and flags parsed from process.argv
 
 [![Build Status](https://travis-ci.org/neogeek/parse-cmd-args.svg?branch=master)](https://travis-ci.org/neogeek/parse-cmd-args)
@@ -10,6 +8,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/npm/parse-cmd-args/badge.svg)](https://snyk.io/test/npm/parse-cmd-args)
 [![bitHound Overall Score](https://www.bithound.io/github/neogeek/parse-cmd-args/badges/score.svg)](https://www.bithound.io/github/neogeek/parse-cmd-args)
 [![NPM Version](http://img.shields.io/npm/v/parse-cmd-args.svg?style=flat)](https://www.npmjs.org/package/parse-cmd-args)
+[![Greenkeeper badge](https://badges.greenkeeper.io/neogeek/parse-cmd-args.svg)](https://greenkeeper.io/)
 [![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/parse-cmd-args)
 
 ## Install
