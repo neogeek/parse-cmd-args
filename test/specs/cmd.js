@@ -130,9 +130,7 @@ describe('parseCmdArgs', () => {
 
     it('parseCmdArgs with help flag', () => {
 
-        const args = parseCmdArgs([
-            '--help'
-        ]);
+        const args = parseCmdArgs(['--help']);
 
         assert.deepEqual(args, {
             'flags': {
@@ -145,9 +143,7 @@ describe('parseCmdArgs', () => {
 
     it('parseCmdArgs with version flag', () => {
 
-        const args = parseCmdArgs([
-            '--version'
-        ]);
+        const args = parseCmdArgs(['--version']);
 
         assert.deepEqual(args, {
             'flags': {
