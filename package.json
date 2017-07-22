@@ -16,7 +16,11 @@
     "mocha": "^3.2.0"
   },
   "scripts": {
-    "test": "make lint && make coverage"
+    "test": "npm run lint && mocha test/specs/",
+    "test:docs": "doxdox lib/cmd.js -p package.json -l markdown | diff DOCUMENTATION.md -",
+    "lint": "eslint .",
+    "coverage": "istanbul cover _mocha test/specs/ && codecov",
+    "docs": "doxdox lib/cmd.js -p package.json -l markdown -o DOCUMENTATION.md"
   },
   "keywords": [
     "parse",
