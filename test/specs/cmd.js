@@ -3,9 +3,7 @@ const assert = require('assert');
 const parseCmdArgs = require('../../lib/cmd');
 
 describe('parseCmdArgs', () => {
-
     it('parseCmdArgs with flags', () => {
-
         const args = parseCmdArgs([
             '-f',
             'no-reply@test.com',
@@ -16,18 +14,16 @@ describe('parseCmdArgs', () => {
         ]);
 
         assert.deepEqual(args, {
-            'flags': {
+            flags: {
                 '-f': 'no-reply@test.com',
                 '-s': 'Test email',
                 '-t': 'no-reply@test.com'
             },
-            'input': process.cwd()
+            input: process.cwd()
         });
-
     });
 
     it('parseCmdArgs with flags and user input', () => {
-
         const args = parseCmdArgs([
             './src',
             '-f',
@@ -39,18 +35,16 @@ describe('parseCmdArgs', () => {
         ]);
 
         assert.deepEqual(args, {
-            'flags': {
+            flags: {
                 '-f': 'no-reply@test.com',
                 '-s': 'Test email',
                 '-t': 'no-reply@test.com'
             },
-            'input': './src'
+            input: './src'
         });
-
     });
 
     it('parseCmdArgs with flags and multiple user input', () => {
-
         const args = parseCmdArgs([
             './src',
             './lib',
@@ -63,47 +57,43 @@ describe('parseCmdArgs', () => {
         ]);
 
         assert.deepEqual(args, {
-            'flags': {
+            flags: {
                 '-f': 'no-reply@test.com',
                 '-s': 'Test email',
                 '-t': 'no-reply@test.com'
             },
-            'input': './src'
+            input: './src'
         });
-
     });
 
     it('parseCmdArgs with flags and multiple user input (allowMultipleInputs option enabled)', () => {
-
-        const args = parseCmdArgs([
-            './src',
-            './lib',
-            '-f',
-            'no-reply@test.com',
-            '-t',
-            'no-reply@test.com',
-            '-s',
-            'Test email'
-        ], {
-            'allowMultipleInputs': true
-        });
+        const args = parseCmdArgs(
+            [
+                './src',
+                './lib',
+                '-f',
+                'no-reply@test.com',
+                '-t',
+                'no-reply@test.com',
+                '-s',
+                'Test email'
+            ],
+            {
+                allowMultipleInputs: true
+            }
+        );
 
         assert.deepEqual(args, {
-            'flags': {
+            flags: {
                 '-f': 'no-reply@test.com',
                 '-s': 'Test email',
                 '-t': 'no-reply@test.com'
             },
-            'inputs': [
-                './src',
-                './lib'
-            ]
+            inputs: ['./src', './lib']
         });
-
     });
 
     it('parseCmdArgs with flags and non-value flags', () => {
-
         const args = parseCmdArgs([
             '--flag',
             '-f',
@@ -116,94 +106,80 @@ describe('parseCmdArgs', () => {
         ]);
 
         assert.deepEqual(args, {
-            'flags': {
+            flags: {
                 '--flag': true,
                 '--title': true,
                 '-f': 'no-reply@test.com',
                 '-s': 'Test email',
                 '-t': 'no-reply@test.com'
             },
-            'input': process.cwd()
+            input: process.cwd()
         });
-
     });
 
     it('parseCmdArgs with help flag', () => {
-
         const args = parseCmdArgs(['--help']);
 
         assert.deepEqual(args, {
-            'flags': {
+            flags: {
                 '--help': true
             },
-            'input': process.cwd()
+            input: process.cwd()
         });
-
     });
 
     it('parseCmdArgs with version flag', () => {
-
         const args = parseCmdArgs(['--version']);
 
         assert.deepEqual(args, {
-            'flags': {
+            flags: {
                 '--version': true
             },
-            'input': process.cwd()
+            input: process.cwd()
         });
-
     });
 
     it('parseCmdArgs with no flags or user input', () => {
-
         const args = parseCmdArgs();
 
         assert.deepEqual(args, {
-            'flags': {},
-            'input': 'test/specs/'
+            flags: {},
+            input: 'test/specs/'
         });
-
     });
 
     it('parseCmdArgs with no flags or user input (requireUserInput option enabled)', () => {
-
         const args = parseCmdArgs([], {
-            'requireUserInput': true
+            requireUserInput: true
         });
 
         assert.deepEqual(args, {
-            'flags': {},
-            'input': null
+            flags: {},
+            input: null
         });
-
     });
 
     it('parseCmdArgs with a flag and no user input (requireUserInput option enabled)', () => {
-
         const args = parseCmdArgs(['--version'], {
-            'requireUserInput': true
+            requireUserInput: true
         });
 
         assert.deepEqual(args, {
-            'flags': {
+            flags: {
                 '--version': true
             },
-            'input': null
+            input: null
         });
-
     });
 
     it('parseCmdArgs with no flags and user input (requireUserInput option enabled)', () => {
-
         const args = parseCmdArgs(['test.js'], {
-            'requireUserInput': true
+            requireUserInput: true
         });
 
         assert.deepEqual(args, {
-            'flags': {},
-            'input': 'test.js'
+            flags: {},
+            input: 'test.js'
         });
-
     });
-
 });
