@@ -13,7 +13,7 @@ describe('parseCmdArgs', () => {
             'Test email'
         ]);
 
-        assert.deepEqual(args, {
+        assert.deepStrictEqual(args, {
             flags: {
                 '-f': 'no-reply@test.com',
                 '-s': 'Test email',
@@ -34,7 +34,7 @@ describe('parseCmdArgs', () => {
             'Test email'
         ]);
 
-        assert.deepEqual(args, {
+        assert.deepStrictEqual(args, {
             flags: {
                 '-f': 'no-reply@test.com',
                 '-s': 'Test email',
@@ -56,7 +56,7 @@ describe('parseCmdArgs', () => {
             'Test email'
         ]);
 
-        assert.deepEqual(args, {
+        assert.deepStrictEqual(args, {
             flags: {
                 '-f': 'no-reply@test.com',
                 '-s': 'Test email',
@@ -83,7 +83,7 @@ describe('parseCmdArgs', () => {
             }
         );
 
-        assert.deepEqual(args, {
+        assert.deepStrictEqual(args, {
             flags: {
                 '-f': 'no-reply@test.com',
                 '-s': 'Test email',
@@ -105,7 +105,7 @@ describe('parseCmdArgs', () => {
             '--title'
         ]);
 
-        assert.deepEqual(args, {
+        assert.deepStrictEqual(args, {
             flags: {
                 '--flag': true,
                 '--title': true,
@@ -120,7 +120,7 @@ describe('parseCmdArgs', () => {
     it('parseCmdArgs with help flag', () => {
         const args = parseCmdArgs(['--help']);
 
-        assert.deepEqual(args, {
+        assert.deepStrictEqual(args, {
             flags: {
                 '--help': true
             },
@@ -131,7 +131,7 @@ describe('parseCmdArgs', () => {
     it('parseCmdArgs with version flag', () => {
         const args = parseCmdArgs(['--version']);
 
-        assert.deepEqual(args, {
+        assert.deepStrictEqual(args, {
             flags: {
                 '--version': true
             },
@@ -142,7 +142,7 @@ describe('parseCmdArgs', () => {
     it('parseCmdArgs with no flags or user input', () => {
         const args = parseCmdArgs();
 
-        assert.deepEqual(args, {
+        assert.deepStrictEqual(args, {
             flags: {},
             input: 'test/specs/'
         });
@@ -153,7 +153,7 @@ describe('parseCmdArgs', () => {
             requireUserInput: true
         });
 
-        assert.deepEqual(args, {
+        assert.deepStrictEqual(args, {
             flags: {},
             input: null
         });
@@ -164,7 +164,7 @@ describe('parseCmdArgs', () => {
             requireUserInput: true
         });
 
-        assert.deepEqual(args, {
+        assert.deepStrictEqual(args, {
             flags: {
                 '--version': true
             },
@@ -177,7 +177,7 @@ describe('parseCmdArgs', () => {
             requireUserInput: true
         });
 
-        assert.deepEqual(args, {
+        assert.deepStrictEqual(args, {
             flags: {},
             input: 'test.js'
         });
