@@ -8,13 +8,12 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "codecov": "^3.0.0",
-    "istanbul": "^0.4.5",
-    "mocha": "^4.0.1"
+    "codecov": "3.7.2",
+    "jest": "26.4.2"
   },
   "scripts": {
-    "test": "mocha test/specs/",
-    "coverage": "istanbul cover _mocha test/specs/ && codecov"
+    "coverage": "jest --coverage --verbose=true",
+    "test": "jest --verbose=true"
   },
   "keywords": [
     "parse",
