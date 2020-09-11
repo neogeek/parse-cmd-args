@@ -1,8 +1,12 @@
 const assert = require('assert');
 
-const parseCmdArgs = require('../../lib/cmd');
+const parseCmdArgs = require('../lib/cmd.js');
 
 describe('parseCmdArgs', () => {
+    beforeEach(() => {
+        process.argv = [];
+    });
+
     it('parseCmdArgs with flags', () => {
         const args = parseCmdArgs([
             '-f',
@@ -144,7 +148,7 @@ describe('parseCmdArgs', () => {
 
         assert.deepStrictEqual(args, {
             flags: {},
-            input: 'test/specs/'
+            input: process.cwd()
         });
     });
 
@@ -155,7 +159,7 @@ describe('parseCmdArgs', () => {
 
         assert.deepStrictEqual(args, {
             flags: {},
-            input: null
+            input: undefined
         });
     });
 
@@ -168,7 +172,7 @@ describe('parseCmdArgs', () => {
             flags: {
                 '--version': true
             },
-            input: null
+            input: undefined
         });
     });
 
