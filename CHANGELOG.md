@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.0.0 (September 11, 2020)
+
+- Updated Node.js min version.
+- Updated packages.
+
 ## 2.0.0 (October 25, 2016)
 
 - Removed path resolution of inputs.
