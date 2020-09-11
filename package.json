@@ -9,15 +9,12 @@
   "license": "MIT",
   "devDependencies": {
     "codecov": "^3.0.0",
-    "doxdox": "^2.0.2",
     "istanbul": "^0.4.5",
     "mocha": "^4.0.1"
   },
   "scripts": {
     "test": "mocha test/specs/",
-    "test:docs": "doxdox lib/cmd.js -p package.json -l markdown | diff DOCUMENTATION.md -",
-    "coverage": "istanbul cover _mocha test/specs/ && codecov",
-    "docs": "doxdox lib/cmd.js -p package.json -l markdown -o DOCUMENTATION.md"
+    "coverage": "istanbul cover _mocha test/specs/ && codecov"
   },
   "keywords": [
     "parse",
