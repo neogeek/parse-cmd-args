@@ -1,5 +1,11 @@
 # Changelog
 
+## [v4.0.0](https://github.com/neogeek/parse-cmd-args/tree/v4.0.0) - (2022-02-07)
+
+[Full Changelog](https://github.com/neogeek/parse-cmd-args/compare/v3.0.0...v4.0.0)
+
+- [feat] Converted package to TypeScript. [#38](https://github.com/neogeek/parse-cmd-args/pull/38)
+
 ## [v3.0.0](https://github.com/neogeek/parse-cmd-args/tree/v3.0.0) - (2020-09-11)
 
 [Full Changelog](https://github.com/neogeek/parse-cmd-args/compare/v2.0.0...v3.0.0)
