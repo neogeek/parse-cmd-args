@@ -1,6 +1,6 @@
-const assert = require('assert');
+import assert from 'assert';
 
-const parseCmdArgs = require('../lib/cmd.js');
+import parseCmdArgs from './index';
 
 describe('parseCmdArgs', () => {
     beforeEach(() => {
@@ -23,7 +23,7 @@ describe('parseCmdArgs', () => {
                 '-s': 'Test email',
                 '-t': 'no-reply@test.com'
             },
-            input: process.cwd()
+            inputs: [process.cwd()]
         });
     });
 
@@ -44,7 +44,7 @@ describe('parseCmdArgs', () => {
                 '-s': 'Test email',
                 '-t': 'no-reply@test.com'
             },
-            input: './src'
+            inputs: ['./src']
         });
     });
 
@@ -59,33 +59,6 @@ describe('parseCmdArgs', () => {
             '-s',
             'Test email'
         ]);
-
-        assert.deepStrictEqual(args, {
-            flags: {
-                '-f': 'no-reply@test.com',
-                '-s': 'Test email',
-                '-t': 'no-reply@test.com'
-            },
-            input: './src'
-        });
-    });
-
-    it('parseCmdArgs with flags and multiple user input (allowMultipleInputs option enabled)', () => {
-        const args = parseCmdArgs(
-            [
-                './src',
-                './lib',
-                '-f',
-                'no-reply@test.com',
-                '-t',
-                'no-reply@test.com',
-                '-s',
-                'Test email'
-            ],
-            {
-                allowMultipleInputs: true
-            }
-        );
 
         assert.deepStrictEqual(args, {
             flags: {
@@ -117,7 +90,7 @@ describe('parseCmdArgs', () => {
                 '-s': 'Test email',
                 '-t': 'no-reply@test.com'
             },
-            input: process.cwd()
+            inputs: [process.cwd()]
         });
     });
 
@@ -128,7 +101,7 @@ describe('parseCmdArgs', () => {
             flags: {
                 '--help': true
             },
-            input: process.cwd()
+            inputs: [process.cwd()]
         });
     });
 
@@ -139,7 +112,7 @@ describe('parseCmdArgs', () => {
             flags: {
                 '--version': true
             },
-            input: process.cwd()
+            inputs: [process.cwd()]
         });
     });
 
@@ -148,7 +121,7 @@ describe('parseCmdArgs', () => {
 
         assert.deepStrictEqual(args, {
             flags: {},
-            input: process.cwd()
+            inputs: [process.cwd()]
         });
     });
 
@@ -159,7 +132,7 @@ describe('parseCmdArgs', () => {
 
         assert.deepStrictEqual(args, {
             flags: {},
-            input: undefined
+            inputs: []
         });
     });
 
@@ -172,7 +145,7 @@ describe('parseCmdArgs', () => {
             flags: {
                 '--version': true
             },
-            input: undefined
+            inputs: []
         });
     });
 
@@ -183,7 +156,7 @@ describe('parseCmdArgs', () => {
 
         assert.deepStrictEqual(args, {
             flags: {},
-            input: 'test.js'
+            inputs: ['test.js']
         });
     });
 });
