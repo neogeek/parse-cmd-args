@@ -177,4 +177,20 @@ describe('parseCmdArgs', () => {
             })
         );
     });
+
+    it('parseCmdArgs with multiple flags with the same name', () => {
+        const args = parseCmdArgs(['-c', 'key=a', '-c', 'key=b'], {
+            requireUserInput: true
+        });
+
+        expect(args).toEqual(
+            expect.objectContaining({
+                raw: [
+                    ['-c', 'key=a'],
+                    ['-c', 'key=b']
+                ],
+                inputs: []
+            })
+        );
+    });
 });

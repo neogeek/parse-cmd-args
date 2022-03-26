@@ -23,10 +23,16 @@ const FLAG_REGEX_PATTERN = /^-{1,2}/;
 const parseCmdArgs = (
     args?: string[] | null,
     options: { requireUserInput?: boolean } = {}
-): { flags: { [key in string]: string | boolean }; inputs: string[] } => {
+): {
+    flags: { [key in string]: string | boolean };
+    raw: [string, string | boolean][];
+    inputs: string[];
+} => {
     const inputs: string[] = [];
 
     const flags: { [key in string]: string | boolean } = {};
+
+    const raw: [string, string | boolean][] = [];
 
     if (!args) {
         args = process.argv.slice(PROCESS_CMD_LINE_ARGS_LENGTH);
@@ -38,11 +44,14 @@ const parseCmdArgs = (
         } else if (args[0].match(FLAG_REGEX_PATTERN)) {
             const key = args.shift() as string;
 
-            if (args.length && !args[0].match(FLAG_REGEX_PATTERN)) {
-                flags[key] = args.shift() as string;
-            } else {
-                flags[key] = true;
-            }
+            const value =
+                args.length && !args[0].match(FLAG_REGEX_PATTERN)
+                    ? (args.shift() as string)
+                    : true;
+
+            flags[key] = value;
+
+            raw.push([key, value]);
         }
     }
 
@@ -52,6 +61,7 @@ const parseCmdArgs = (
 
     return {
         flags,
+        raw,
         inputs
     };
 };
