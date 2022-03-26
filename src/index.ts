@@ -1,3 +1,5 @@
+import { Flags, Options, RawFlags } from './types';
+
 const PROCESS_CMD_LINE_ARGS_LENGTH = 2;
 const FLAG_REGEX_PATTERN = /^-{1,2}/;
 
@@ -22,17 +24,17 @@ const FLAG_REGEX_PATTERN = /^-{1,2}/;
 
 const parseCmdArgs = (
     args?: string[] | null,
-    options: { requireUserInput?: boolean } = {}
+    options: Options = {}
 ): {
-    flags: { [key in string]: string | boolean };
-    raw: [string, string | boolean][];
+    flags: Flags;
+    raw: RawFlags;
     inputs: string[];
 } => {
     const inputs: string[] = [];
 
-    const flags: { [key in string]: string | boolean } = {};
+    const flags: Flags = {};
 
-    const raw: [string, string | boolean][] = [];
+    const raw: RawFlags = [];
 
     if (!args) {
         args = process.argv.slice(PROCESS_CMD_LINE_ARGS_LENGTH);
