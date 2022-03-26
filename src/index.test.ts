@@ -1,5 +1,3 @@
-import assert from 'assert';
-
 import parseCmdArgs from './index';
 
 describe('parseCmdArgs', () => {
@@ -17,14 +15,16 @@ describe('parseCmdArgs', () => {
             'Test email'
         ]);
 
-        assert.deepStrictEqual(args, {
-            flags: {
-                '-f': 'no-reply@test.com',
-                '-s': 'Test email',
-                '-t': 'no-reply@test.com'
-            },
-            inputs: [process.cwd()]
-        });
+        expect(args).toEqual(
+            expect.objectContaining({
+                flags: {
+                    '-f': 'no-reply@test.com',
+                    '-s': 'Test email',
+                    '-t': 'no-reply@test.com'
+                },
+                inputs: [process.cwd()]
+            })
+        );
     });
 
     it('parseCmdArgs with flags and user input', () => {
@@ -38,14 +38,16 @@ describe('parseCmdArgs', () => {
             'Test email'
         ]);
 
-        assert.deepStrictEqual(args, {
-            flags: {
-                '-f': 'no-reply@test.com',
-                '-s': 'Test email',
-                '-t': 'no-reply@test.com'
-            },
-            inputs: ['./src']
-        });
+        expect(args).toEqual(
+            expect.objectContaining({
+                flags: {
+                    '-f': 'no-reply@test.com',
+                    '-s': 'Test email',
+                    '-t': 'no-reply@test.com'
+                },
+                inputs: ['./src']
+            })
+        );
     });
 
     it('parseCmdArgs with flags and multiple user input', () => {
@@ -60,14 +62,16 @@ describe('parseCmdArgs', () => {
             'Test email'
         ]);
 
-        assert.deepStrictEqual(args, {
-            flags: {
-                '-f': 'no-reply@test.com',
-                '-s': 'Test email',
-                '-t': 'no-reply@test.com'
-            },
-            inputs: ['./src', './lib']
-        });
+        expect(args).toEqual(
+            expect.objectContaining({
+                flags: {
+                    '-f': 'no-reply@test.com',
+                    '-s': 'Test email',
+                    '-t': 'no-reply@test.com'
+                },
+                inputs: ['./src', './lib']
+            })
+        );
     });
 
     it('parseCmdArgs with flags and non-value flags', () => {
@@ -82,47 +86,55 @@ describe('parseCmdArgs', () => {
             '--title'
         ]);
 
-        assert.deepStrictEqual(args, {
-            flags: {
-                '--flag': true,
-                '--title': true,
-                '-f': 'no-reply@test.com',
-                '-s': 'Test email',
-                '-t': 'no-reply@test.com'
-            },
-            inputs: [process.cwd()]
-        });
+        expect(args).toEqual(
+            expect.objectContaining({
+                flags: {
+                    '--flag': true,
+                    '--title': true,
+                    '-f': 'no-reply@test.com',
+                    '-s': 'Test email',
+                    '-t': 'no-reply@test.com'
+                },
+                inputs: [process.cwd()]
+            })
+        );
     });
 
     it('parseCmdArgs with help flag', () => {
         const args = parseCmdArgs(['--help']);
 
-        assert.deepStrictEqual(args, {
-            flags: {
-                '--help': true
-            },
-            inputs: [process.cwd()]
-        });
+        expect(args).toEqual(
+            expect.objectContaining({
+                flags: {
+                    '--help': true
+                },
+                inputs: [process.cwd()]
+            })
+        );
     });
 
     it('parseCmdArgs with version flag', () => {
         const args = parseCmdArgs(['--version']);
 
-        assert.deepStrictEqual(args, {
-            flags: {
-                '--version': true
-            },
-            inputs: [process.cwd()]
-        });
+        expect(args).toEqual(
+            expect.objectContaining({
+                flags: {
+                    '--version': true
+                },
+                inputs: [process.cwd()]
+            })
+        );
     });
 
     it('parseCmdArgs with no flags or user input', () => {
         const args = parseCmdArgs();
 
-        assert.deepStrictEqual(args, {
-            flags: {},
-            inputs: [process.cwd()]
-        });
+        expect(args).toEqual(
+            expect.objectContaining({
+                flags: {},
+                inputs: [process.cwd()]
+            })
+        );
     });
 
     it('parseCmdArgs with no flags or user input (requireUserInput option enabled)', () => {
@@ -130,10 +142,12 @@ describe('parseCmdArgs', () => {
             requireUserInput: true
         });
 
-        assert.deepStrictEqual(args, {
-            flags: {},
-            inputs: []
-        });
+        expect(args).toEqual(
+            expect.objectContaining({
+                flags: {},
+                inputs: []
+            })
+        );
     });
 
     it('parseCmdArgs with a flag and no user input (requireUserInput option enabled)', () => {
@@ -141,12 +155,14 @@ describe('parseCmdArgs', () => {
             requireUserInput: true
         });
 
-        assert.deepStrictEqual(args, {
-            flags: {
-                '--version': true
-            },
-            inputs: []
-        });
+        expect(args).toEqual(
+            expect.objectContaining({
+                flags: {
+                    '--version': true
+                },
+                inputs: []
+            })
+        );
     });
 
     it('parseCmdArgs with no flags and user input (requireUserInput option enabled)', () => {
@@ -154,9 +170,11 @@ describe('parseCmdArgs', () => {
             requireUserInput: true
         });
 
-        assert.deepStrictEqual(args, {
-            flags: {},
-            inputs: ['test.js']
-        });
+        expect(args).toEqual(
+            expect.objectContaining({
+                flags: {},
+                inputs: ['test.js']
+            })
+        );
     });
 });
