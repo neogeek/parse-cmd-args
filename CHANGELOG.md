@@ -1,5 +1,11 @@
 # Changelog
 
+## [v4.1.0](https://github.com/neogeek/parse-cmd-args/tree/v4.1.0) - (2022-03-25)
+
+[Full Changelog](https://github.com/neogeek/parse-cmd-args/compare/v4.0.0...v4.1.0)
+
+- [feat] Capture raw inputs. [#39](https://github.com/neogeek/parse-cmd-args/pull/39)
+
 ## [v4.0.0](https://github.com/neogeek/parse-cmd-args/tree/v4.0.0) - (2022-02-07)
 
 [Full Changelog](https://github.com/neogeek/parse-cmd-args/compare/v3.0.0...v4.0.0)
