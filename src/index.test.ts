@@ -22,6 +22,11 @@ describe('parseCmdArgs', () => {
                     '-s': 'Test email',
                     '-t': 'no-reply@test.com'
                 },
+                raw: expect.arrayContaining([
+                    ['-f', 'no-reply@test.com'],
+                    ['-s', 'Test email'],
+                    ['-t', 'no-reply@test.com']
+                ]),
                 inputs: [process.cwd()]
             })
         );
@@ -45,6 +50,11 @@ describe('parseCmdArgs', () => {
                     '-s': 'Test email',
                     '-t': 'no-reply@test.com'
                 },
+                raw: expect.arrayContaining([
+                    ['-f', 'no-reply@test.com'],
+                    ['-s', 'Test email'],
+                    ['-t', 'no-reply@test.com']
+                ]),
                 inputs: ['./src']
             })
         );
@@ -69,6 +79,11 @@ describe('parseCmdArgs', () => {
                     '-s': 'Test email',
                     '-t': 'no-reply@test.com'
                 },
+                raw: expect.arrayContaining([
+                    ['-f', 'no-reply@test.com'],
+                    ['-s', 'Test email'],
+                    ['-t', 'no-reply@test.com']
+                ]),
                 inputs: ['./src', './lib']
             })
         );
@@ -95,6 +110,13 @@ describe('parseCmdArgs', () => {
                     '-s': 'Test email',
                     '-t': 'no-reply@test.com'
                 },
+                raw: expect.arrayContaining([
+                    ['--flag', true],
+                    ['--title', true],
+                    ['-f', 'no-reply@test.com'],
+                    ['-s', 'Test email'],
+                    ['-t', 'no-reply@test.com']
+                ]),
                 inputs: [process.cwd()]
             })
         );
@@ -108,6 +130,7 @@ describe('parseCmdArgs', () => {
                 flags: {
                     '--help': true
                 },
+                raw: expect.arrayContaining([['--help', true]]),
                 inputs: [process.cwd()]
             })
         );
@@ -121,6 +144,7 @@ describe('parseCmdArgs', () => {
                 flags: {
                     '--version': true
                 },
+                raw: expect.arrayContaining([['--version', true]]),
                 inputs: [process.cwd()]
             })
         );
@@ -132,6 +156,7 @@ describe('parseCmdArgs', () => {
         expect(args).toEqual(
             expect.objectContaining({
                 flags: {},
+                raw: [],
                 inputs: [process.cwd()]
             })
         );
@@ -145,6 +170,7 @@ describe('parseCmdArgs', () => {
         expect(args).toEqual(
             expect.objectContaining({
                 flags: {},
+                raw: [],
                 inputs: []
             })
         );
@@ -160,6 +186,7 @@ describe('parseCmdArgs', () => {
                 flags: {
                     '--version': true
                 },
+                raw: expect.arrayContaining([['--version', true]]),
                 inputs: []
             })
         );
@@ -173,6 +200,7 @@ describe('parseCmdArgs', () => {
         expect(args).toEqual(
             expect.objectContaining({
                 flags: {},
+                raw: [],
                 inputs: ['test.js']
             })
         );
