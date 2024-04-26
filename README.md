@@ -2,7 +2,10 @@
 
 > Returns an object containing the path and flags parsed from process.argv
 
-[![NPM Version](http://img.shields.io/npm/v/parse-cmd-args.svg?style=flat)](https://www.npmjs.org/package/parse-cmd-args)
+[![Test](https://github.com/neogeek/parse-cmd-args/actions/workflows/test.workflow.yml/badge.svg)](https://github.com/neogeek/parse-cmd-args/actions/workflows/test.workflow.yml)
+[![Publish](https://github.com/neogeek/parse-cmd-args/actions/workflows/publish.workflow.yml/badge.svg)](https://github.com/neogeek/parse-cmd-args/actions/workflows/publish.workflow.yml)
+[![Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/parse-cmd-args)
+[![NPM version](https://img.shields.io/npm/v/parse-cmd-args)](https://www.npmjs.org/package/parse-cmd-args)
 
 ## Install
 
