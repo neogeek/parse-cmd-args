@@ -1,6 +1,13 @@
 # Changelog
 
-## [v4.1.0](https://github.com/neogeek/parse-cmd-args/tree/v4.1.0) - (2022-03-25)
+## [HEAD](https://github.com/neogeek/parse-cmd-args/tree/HEAD) - (2024-04-26)
+
+[Full Changelog](https://github.com/neogeek/parse-cmd-args/compare/v4.1.0...HEAD)
+
+- [hotfix] Updated packages. [#42](https://github.com/neogeek/parse-cmd-args/pull/42)
+- [feat] Added types. [#40](https://github.com/neogeek/parse-cmd-args/pull/40)
+
+## [v4.1.0](https://github.com/neogeek/parse-cmd-args/tree/v4.1.0) - (2022-03-26)
 
 [Full Changelog](https://github.com/neogeek/parse-cmd-args/compare/v4.0.0...v4.1.0)
 
