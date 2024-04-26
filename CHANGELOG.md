@@ -1,5 +1,11 @@
 # Changelog
 
+## [v5.0.1](https://github.com/neogeek/parse-cmd-args/tree/v5.0.1) - (2024-04-26)
+
+[Full Changelog](https://github.com/neogeek/parse-cmd-args/compare/v5.0.0...v5.0.1)
+
+- [hotfix] Fixed publish workflow to build before publish. [#43](https://github.com/neogeek/parse-cmd-args/pull/43)
+
 ## [v5.0.0](https://github.com/neogeek/parse-cmd-args/tree/v5.0.0) - (2024-04-26)
 
 [Full Changelog](https://github.com/neogeek/parse-cmd-args/compare/v4.1.0...v5.0.0)
