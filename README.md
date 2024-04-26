@@ -13,7 +13,9 @@ $ npm install parse-cmd-args --save
 ## Usage
 
 ```typescript
-import { readFileSync } from 'fs';
+import { readFile } from 'node:fs/promises';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 import parseCmdArgs from 'parse-cmd-args';
 
@@ -23,11 +25,24 @@ const args = parseCmdArgs(null, {
 
 if (args.flags['--version'] || args.flags['-v']) {
   process.stdout.write(
-    `${JSON.parse(readFileSync('./package.json', 'utf8')).version}\n`
+    `${
+      JSON.parse(
+        async readFile(
+          join(dirname(fileURLToPath(import.meta.url)), '../package.json'),
+          'utf8'
+        )
+      ).version
+    }\n`
   );
   process.exit();
 } else if (args.flags['--help'] || args.flags['-h']) {
-  process.stdout.write('Usage: \n');
+  process.stdout.write(`Usage: example <path> ... [options]
+
+  Options:
+
+   -h, --help         Display this help message.
+   -v, --version      Display the current installed version.
+`);
   process.exit();
 }
 
