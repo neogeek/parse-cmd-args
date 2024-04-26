@@ -23,49 +23,49 @@ const FLAG_REGEX_PATTERN = /^-{1,2}/;
  */
 
 const parseCmdArgs = (
-    args?: string[] | null,
-    options: Options = {}
+  args?: string[] | null,
+  options: Options = {}
 ): {
-    flags: Flags;
-    raw: RawFlags;
-    inputs: string[];
+  flags: Flags;
+  raw: RawFlags;
+  inputs: string[];
 } => {
-    const inputs: string[] = [];
+  const inputs: string[] = [];
 
-    const flags: Flags = {};
+  const flags: Flags = {};
 
-    const raw: RawFlags = [];
+  const raw: RawFlags = [];
 
-    if (!args) {
-        args = process.argv.slice(PROCESS_CMD_LINE_ARGS_LENGTH);
+  if (!args) {
+    args = process.argv.slice(PROCESS_CMD_LINE_ARGS_LENGTH);
+  }
+
+  while (args.length) {
+    if (!args[0].match(FLAG_REGEX_PATTERN)) {
+      inputs.push(args.shift() as string);
+    } else if (args[0].match(FLAG_REGEX_PATTERN)) {
+      const key = args.shift() as string;
+
+      const value =
+        args.length && !args[0].match(FLAG_REGEX_PATTERN)
+          ? (args.shift() as string)
+          : true;
+
+      flags[key] = value;
+
+      raw.push([key, value]);
     }
+  }
 
-    while (args.length) {
-        if (!args[0].match(FLAG_REGEX_PATTERN)) {
-            inputs.push(args.shift() as string);
-        } else if (args[0].match(FLAG_REGEX_PATTERN)) {
-            const key = args.shift() as string;
+  if (!inputs.length && !options.requireUserInput) {
+    inputs.push(process.cwd());
+  }
 
-            const value =
-                args.length && !args[0].match(FLAG_REGEX_PATTERN)
-                    ? (args.shift() as string)
-                    : true;
-
-            flags[key] = value;
-
-            raw.push([key, value]);
-        }
-    }
-
-    if (!inputs.length && !options.requireUserInput) {
-        inputs.push(process.cwd());
-    }
-
-    return {
-        flags,
-        raw,
-        inputs
-    };
+  return {
+    flags,
+    raw,
+    inputs
+  };
 };
 
 export default parseCmdArgs;
