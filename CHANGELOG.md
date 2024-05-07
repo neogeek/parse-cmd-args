@@ -1,5 +1,12 @@
 # Changelog
 
+## [v5.0.2](https://github.com/neogeek/parse-cmd-args/tree/v5.0.2) - (2024-05-07)
+
+[Full Changelog](https://github.com/neogeek/parse-cmd-args/compare/v5.0.1...v5.0.2)
+
+- [hotfix] Fixed import path. [#45](https://github.com/neogeek/parse-cmd-args/pull/45)
+- [hotfix] Updated packages. [#44](https://github.com/neogeek/parse-cmd-args/pull/44)
+
 ## [v5.0.1](https://github.com/neogeek/parse-cmd-args/tree/v5.0.1) - (2024-04-26)
 
 [Full Changelog](https://github.com/neogeek/parse-cmd-args/compare/v5.0.0...v5.0.1)
@@ -31,8 +38,10 @@
 
 - chore(package): update mocha to version 4.0.1 [#32](https://github.com/neogeek/parse-cmd-args/pull/32)
 - Update codecov to the latest version 🚀 [#31](https://github.com/neogeek/parse-cmd-args/pull/31)
+- chore(package): update mocha to version 4.0.1 [#30](https://github.com/neogeek/parse-cmd-args/pull/30)
 - Update @neogeek/eslint-config-standards to the latest version 🚀 [#28](https://github.com/neogeek/parse-cmd-args/pull/28)
 - chore(package): update eslint to version 4.2.0 [#29](https://github.com/neogeek/parse-cmd-args/pull/29)
+- chore(package): update eslint to version 4.2.0 [#27](https://github.com/neogeek/parse-cmd-args/pull/27)
 - Update @neogeek/eslint-config-standards to the latest version 🚀 [#25](https://github.com/neogeek/parse-cmd-args/pull/25)
 - Update eslint to the latest version 🚀 [#23](https://github.com/neogeek/parse-cmd-args/pull/23)
 - Update codecov to the latest version 🚀 [#24](https://github.com/neogeek/parse-cmd-args/pull/24)
@@ -40,8 +49,10 @@
 - Update codecov to the latest version 🚀 [#21](https://github.com/neogeek/parse-cmd-args/pull/21)
 - Update @neogeek/eslint-config-standards to the latest version 🚀 [#19](https://github.com/neogeek/parse-cmd-args/pull/19)
 - chore(package): update eslint to version 3.17.1 [#20](https://github.com/neogeek/parse-cmd-args/pull/20)
+- chore(package): update eslint to version 3.17.1 [#18](https://github.com/neogeek/parse-cmd-args/pull/18)
 - chore(package): update eslint to version 3.16.1 [#17](https://github.com/neogeek/parse-cmd-args/pull/17)
 - Update @neogeek/eslint-config-standards to the latest version 🚀 [#16](https://github.com/neogeek/parse-cmd-args/pull/16)
+- chore(package): update eslint to version 3.16.1 [#15](https://github.com/neogeek/parse-cmd-args/pull/15)
 - Update dependencies to enable Greenkeeper 🌴 [#14](https://github.com/neogeek/parse-cmd-args/pull/14)
 - Update doxdox to version 2.0.0 🚀 [#11](https://github.com/neogeek/parse-cmd-args/pull/11)
 - Update mocha to version 3.2.0 🚀 [#8](https://github.com/neogeek/parse-cmd-args/pull/8)
