@@ -1,4 +1,4 @@
-import { Flags, Options, RawFlags } from './types';
+import { Flags, Options, RawFlags } from './types.js';
 
 const PROCESS_CMD_LINE_ARGS_LENGTH = 2;
 const FLAG_REGEX_PATTERN = /^-{1,2}/;
